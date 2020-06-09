@@ -875,8 +875,9 @@ void ClassicSimControl::update_displayed_dps_value(const double new_dps_value, c
 
     QString dps = QString::number(last_personal_sim_result, 'f', 2) + " DPS";
     QString tps = QString::number(new_tps_value, 'f', 2) + " TPS (" + tps_change + ")";
-    qDebug() << "Total DPS: " << dps;
-    qDebug() << "Total TPS:" << tps;
+    //qDebug() << "Total DPS: " << dps;
+    //qDebug() << "Total TPS:" << tps;
+    qDebug().noquote() << tps;
     simPersonalResultUpdated(dps, dps_change, tps, delta > 0);
 }
 
@@ -889,7 +890,7 @@ void ClassicSimControl::update_displayed_raid_dps_value(const double new_dps_val
 
     QString dps = QString::number(last_raid_sim_result, 'f', 2);
 
-    qDebug() << "Total Raid DPS:" << dps;
+    //qDebug() << "Total Raid DPS:" << dps;
 
     simRaidResultUpdated(dps, change, delta > 0);
 }
@@ -962,6 +963,8 @@ void ClassicSimControl::runFullSim() {
     emit simProgressChanged();
 }
 
+void ClassicSimControl::run_next_sim() {}
+
 void ClassicSimControl::compile_thread_results() {
     dps_scale_result_model->update_statistics();
     tps_scale_result_model->update_statistics();
@@ -986,6 +989,7 @@ void ClassicSimControl::compile_thread_results() {
     emit simProgressChanged();
     emit combatProgressChanged();
     emit statisticsReady();
+    run_next_sim();
 }
 
 QString ClassicSimControl::get_handled_events_per_second() const {

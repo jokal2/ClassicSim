@@ -244,6 +244,7 @@ public:
     ScaleResultModel* get_tps_scale_result_model() const;
     ThreatBreakdownModel* get_thrt_breakdown_model() const;
     Q_SLOT void compile_thread_results();
+    virtual void run_next_sim();
     Q_PROPERTY(QString minDps READ get_min_dps NOTIFY statisticsReady)
     Q_PROPERTY(QString maxDps READ get_max_dps NOTIFY statisticsReady)
     Q_PROPERTY(QString dpsStdDev READ get_standard_deviation NOTIFY statisticsReady)
