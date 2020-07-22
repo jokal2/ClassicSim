@@ -6,6 +6,7 @@
     <file path="Rotations/Warrior/2hFury.xml"/>
     <file path="Rotations/Warrior/Arms.xml"/>
     <file path="Rotations/Warrior/Prot.xml"/>
+    <file path="Rotations/Warrior/ProtNoDW.xml"/>
 
     <file path="Rotations/Rogue/Combat.xml"/>
     <file path="Rotations/Rogue/CombatDagger.xml"/>
