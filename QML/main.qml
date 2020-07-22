@@ -241,7 +241,7 @@ Window {
             id: continuousTpsUpdateText
             anchors {
                 top: parent.top
-                topMargin: -10
+                topMargin: 10
             }
 
             width: parent.width
@@ -251,7 +251,7 @@ Window {
             font {
                 family: fontNumbers
                 bold: true
-                pointSize: 10
+                pointSize: 24
             }
 
             color: gray
@@ -262,7 +262,7 @@ Window {
             id: percentualDifference
             anchors {
                 bottom: parent.bottom
-                bottomMargin: - 10
+                bottomMargin: 10
             }
 
             width: parent.width
